@@ -39,8 +39,12 @@ function Login({ setIsLogin }) {
 
       localStorage.setItem("token", data.token);
 
-      navigate("/home");
-      window.location.reload();
+     // navigate("/home");
+      //window.location.reload();
+      setTimeout(() => {
+        navigate("/home");
+        window.location.reload();
+      }, 2000);
       console.log(data);
     } catch (error) {
       toast.error(error?.response?.data?.msg);
